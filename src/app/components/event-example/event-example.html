@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Tracker de Coordenadas del Mouse</h2>
+    <div class="tracking-area" (mousemove)="onMouseMove($event)">
+        <p>Mueve el mouse sobre esta área para ver las coordenadas</p>
+        <div class="coordinates">
+            <h3>Coordenadas:</h3>
+            <p>Client: {{ clientX + ', ' + clientY }}</p>
+            <p>Screen: {{ screenX + ', ' + screenY }}</p>
+            <p>Page: {{ pageX + ', ' + pageY }}</p>
+            <p>Offset: {{ offsetX + ', ' + offsetY }}</p>
+        </div>
+    </div>
+</div>
