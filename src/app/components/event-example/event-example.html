@@ -1,13 +1,35 @@
 <div class="container">
-    <h2>Tracker de Coordenadas del Mouse</h2>
-    <div class="tracking-area" (mousemove)="onMouseMove($event)">
-        <p>Mueve el mouse sobre esta área para ver las coordenadas</p>
-        <div class="coordinates">
-            <h3>Coordenadas:</h3>
-            <p>Client: {{ clientX + ', ' + clientY }}</p>
-            <p>Screen: {{ screenX + ', ' + screenY }}</p>
-            <p>Page: {{ pageX + ', ' + pageY }}</p>
-            <p>Offset: {{ offsetX + ', ' + offsetY }}</p>
+    <h2>Tracker de Eventos</h2>
+    <p class="muted">
+        Demostración de <strong>Eventos de Componente (@Output)</strong> + <strong>Evento DOM global</strong>.
+    </p>
+
+    <app-tracked-pad (move)="onPadMove($event)" (enter)="onPadEnter()" (leave)="onPadLeave()">
+
+        <div class="inner-info">
+            <span>Eventos emitidos por el hijo → padre</span>
         </div>
+    </app-tracked-pad>
+
+    <div class="grid">
+        <section class="card">
+            <h3>Coordenadas</h3>
+            <p>Client: {{ clientX }}, {{ clientY }}</p>
+            <p>Screen: {{ screenX }}, {{ screenY }}</p>
+            <p>Page:&nbsp;&nbsp; {{ pageX }}, {{ pageY }}</p>
+            <p>Offset: {{ offsetX }}, {{ offsetY }}</p>
+        </section>
+
+        <section class="card">
+            <h3>Entradas / Salidas</h3>
+            <p>Veces dentro del área: <strong>{{ timesEntered }}</strong></p>
+            <p>Veces que salió: <strong>{{ timesLeft }}</strong></p>
+        </section>
+
+        <section class="card">
+            <h3>Evento DOM global</h3>
+            <p>Última tecla presionada: <strong>{{ lastKey || '—' }}</strong></p>
+            <p class="muted">Capturado con <code>@HostListener('window:keydown')</code></p>
+        </section>
     </div>
 </div>
