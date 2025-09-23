@@ -1,0 +1,14 @@
+.tracking-area {
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    padding: .75rem;
+    background: #f8fafc;
+    transition: background .15s ease;
+}
+
+.tracking-area:hover {
+    background: #f1f5f9;
+}
