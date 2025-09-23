@@ -1,0 +1,43 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.tracking-area {
+  border: 2px dashed #3498db;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  background: #f8fbff;
+  transition: background 0.3s ease;
+}
+
+.tracking-area:hover {
+  background: #eaf4ff;
+}
+
+.coordinates {
+  margin-top: 1rem;
+  text-align: left;
+  padding: 1rem;
+  background: #f1f3f5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.coordinates p {
+  margin: 0.3rem 0;
+  font-weight: 500;
+}
