@@ -1,4 +1,6 @@
-<div [style.backgroundColor]="computada()" class="rounded">
+<div [style.backgroundColor]="computada()" class="rounded p-3 text-white">
     <h3>Clicks: {{ count() }}</h3>
+    <p>Color actual: {{ colorName() }}</p>
+    <p><em>{{ message() }}</em></p>
     <button (click)="increment()">Click aquí</button>
 </div>

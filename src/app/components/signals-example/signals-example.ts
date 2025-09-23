@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signals-example',
@@ -26,8 +26,19 @@ export class SignalsExample {
     if (value === 0) return 'Neutro (Gris)';
     if (value > 0) return `Verde (Positivo: +${value})`;
     return `Rojo (Negativo: ${value})`;
-  })
+  });
+
+  // Señal para mostrar el mensaje en la UI
+  message = signal('');
+
+  constructor() {
+    effect(() => {
+      const value = this.count();
+      this.message.set(`El contador cambió a: ${value}`);
+    });
+  }
+
   increment() {
-    this.count.update(v => v + 1)
+    this.count.update(v => v + 1);
   }
 }
